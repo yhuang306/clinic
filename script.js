@@ -9,8 +9,8 @@ let needLab = document.getElementById('lab');
 
 
 function generate() {
-    let chineseString = `${username.value} 您好! 丁华医生诊所通知您, 您的报告出来了需要回来。请尽快致电诊所预约时间, 电话是718-886-8998。 请回复 1 确认收到短信。`;
-    let englishString = `Hello ${username.value}! This is Dr. Ding Hua's office to informs you that your report has come out and you need to come back. Please call the clinic as soon as possible to make an appointment at 718-886-8998. Please reply 1 to confirm receipt of this text message.`;
+    let chineseString = `${username.value} 您好! 丁华医生诊所通知您, 您的报告出来了需要回来。请尽快致电诊所预约时间, 电话是718-886-8998.`;
+    let englishString = `Hello ${username.value}! This is Dr. Ding Hua's office to inform you that your report has come out and you need to come back. Please call the clinic as soon as possible to make an appointment at 718-886-8998.`;
     if(language.value === 'chinese')
         output.innerHTML = chineseString;
     else {
@@ -21,10 +21,10 @@ function generate() {
 function apptGenerate() {
 
     if(language.value === 'chinese') {
-        output.innerHTML = `${username.value} 您好! 丁华医生诊所提醒您跟我们预约了${replaceDay()}. ${need_Lab()} 请回复 1 确认预约. 请回复 2 取消预约. 有任何问题可以给我们回电话 718-886-8998. 谢谢！`
+        output.innerHTML = `${username.value} 您好! 丁华医生诊所提醒您跟我们预约了${replaceDay()}. ${need_Lab()} 有任何问题可以给我们回电话 718-886-8998. 谢谢！`
     }
     else {
-        output.innerHTML = `Hello ${username.value}! This is Dr. Ding's office to remind you that your appointment is on ${replaceDay()}. ${need_Lab()} Please reply 1 to confirm the appointment, reply 2 to cancel the appointment and call us at 718-886-8998 to reschedule. Thank you!`
+        output.innerHTML = `Hello ${username.value}! This is Dr. Ding's office to remind you that your appointment is on ${replaceDay()}. ${need_Lab()} Please call us at 718-886-8998 if you want to reschedule. Thank you!`
     }
     
 }
@@ -104,7 +104,7 @@ function need_Lab() {
     }
     else if(language.value === 'english') {
         if(needLab.value === 'yes') {
-            return "Remember to fast for 4 hours, you can drink water."
+            return "Remember to fasting for 4 hours before the blood test, you can drink water."
         }
         else {
             return '';
